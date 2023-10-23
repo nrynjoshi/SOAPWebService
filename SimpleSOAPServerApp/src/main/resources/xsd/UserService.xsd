@@ -1,0 +1,68 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="com.narayanjoshi.simplesoapserverapp.gs_ws"
+           targetNamespace="com.narayanjoshi.simplesoapserverapp.gs_ws" elementFormDefault="qualified">
+
+    <xs:element name="registerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="tns:requestCredential"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="authenticateRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="tns:requestCredential"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="whoamiRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="tns:responseProfile"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateProfileRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="tns:responseProfile"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="requestCredential">
+        <xs:sequence>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="responseProfile">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
+            <xs:element name="register_date" type="xs:dateTime"/>
+            <xs:element name="profile_url" type="xs:anyURI" nillable="true"/>
+            <xs:element name="profile_base64" type="xs:base64Binary" nillable="true"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="uploadProfilePictureRequest">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="profile_url" type="xs:anyURI" nillable="true"/>
+            <xs:element name="profile_base64" type="xs:base64Binary" nillable="true"/>
+        </xs:sequence>
+    </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="ErrorResponse">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string"/>
+            <xs:element name="code" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>

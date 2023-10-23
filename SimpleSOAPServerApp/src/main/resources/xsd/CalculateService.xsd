@@ -1,0 +1,47 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="com.narayanjoshi.simplesoapserverapp.gs_ws"
+           targetNamespace="com.narayanjoshi.simplesoapserverapp.gs_ws" elementFormDefault="qualified">
+
+    <xs:element name="AddRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="tns:RequestOperand"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SubtractRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="tns:RequestOperand"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DivideRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="tns:RequestOperand"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MultipleRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="tns:RequestOperand"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="RequestOperand">
+        <xs:sequence>
+            <xs:element name="value1" type="xs:double"/>
+            <xs:element name="value2" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ResponseResult">
+        <xs:sequence>
+            <xs:element name="result" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>
