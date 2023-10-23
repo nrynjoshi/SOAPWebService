@@ -37,11 +37,12 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="ResponseResult">
+    <xs:element name="ResponseResult">
+    <xs:complexType>
         <xs:sequence>
             <xs:element name="result" type="xs:double"/>
         </xs:sequence>
     </xs:complexType>
-
+    </xs:element>
 
 </xs:schema>
